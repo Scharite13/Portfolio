@@ -9,6 +9,30 @@ body {
 
 .navContainer {
   background-color: rgb(53, 52, 52);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: white;
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+.hamburger {
+  display: none;
+  flex-flow: column nowrap;
+  align-content: space-around;
+  margin-right: 10px;
+}
+
+.hamburgerItem {
+  width: 2rem;
+  height: 0.25rem;
+  margin: 4px;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .navList {
@@ -16,13 +40,36 @@ body {
   padding: 1em;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: right;
 }
 
 .navItem {
   margin: 0.5em;
-  padding: 5px;
+  padding: 10px;
   border: 0.15em solid white;
   list-style: none;
   color: white;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .navList {
+    flex-flow: column nowrap;
+    justify-content: right;
+    display: none;
+  }
+
+  .navList.open {
+    display: flex;
+    flex-direction: column;
+    transform-origin: bottom;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navItem {
+    margin: ;
+  }
 }
